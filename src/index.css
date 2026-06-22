@@ -1,0 +1,157 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --neon-color-1: #2dd4bf; /* Teal */
+    --neon-color-2: #c084fc; /* Purple */
+    --neon-glow-1: 0 0 15px rgba(45, 212, 191, 0.5);
+    --neon-glow-2: 0 0 15px rgba(192, 132, 252, 0.5);
+    --neon-cursor-outer: rgba(45, 212, 191, 0.25);
+  }
+
+  /* Theme: Cyberpunk pink & cyan */
+  .theme-cyberpunk {
+    --neon-color-1: #06b6d4; /* Neon Cyan */
+    --neon-color-2: #ec4899; /* Neon Pink */
+    --neon-glow-1: 0 0 20px rgba(6, 182, 212, 0.6);
+    --neon-glow-2: 0 0 20px rgba(236, 72, 153, 0.6);
+    --neon-cursor-outer: rgba(6, 182, 212, 0.25);
+  }
+
+  /* Theme: Chroma Spectrum Loop */
+  .theme-chroma {
+    --neon-color-1: #ff007f;
+    --neon-color-2: #39ff14;
+    --neon-glow-1: 0 0 20px rgba(255, 0, 127, 0.6);
+    --neon-glow-2: 0 0 20px rgba(57, 255, 20, 0.6);
+    --neon-cursor-outer: rgba(255, 0, 127, 0.25);
+    animation: chroma-cycling 8s linear infinite;
+  }
+
+  /* Theme: Toxic Acid Green & Nuclear Amber */
+  .theme-toxic {
+    --neon-color-1: #39ff14; /* Acid Green */
+    --neon-color-2: #facc15; /* Nuclear Gold */
+    --neon-glow-1: 0 0 20px rgba(57, 255, 20, 0.6);
+    --neon-glow-2: 0 0 20px rgba(250, 204, 21, 0.6);
+    --neon-cursor-outer: rgba(57, 255, 20, 0.25);
+  }
+
+  /* Theme: Frost Overdrive Ice Blue */
+  .theme-ice {
+    --neon-color-1: #00f0ff; /* Ice Cyan */
+    --neon-color-2: #3b82f6; /* Cold Blue */
+    --neon-glow-1: 0 0 20px rgba(0, 240, 255, 0.6);
+    --neon-glow-2: 0 0 20px rgba(59, 130, 246, 0.6);
+    --neon-cursor-outer: rgba(0, 240, 255, 0.25);
+  }
+
+  /* Theme: Matrix Code */
+  .theme-matrix {
+    --neon-color-1: #10b981; /* Matrix Green */
+    --neon-color-2: #34d399; /* Emerald Neon */
+    --neon-glow-1: 0 0 20px rgba(16, 185, 129, 0.7);
+    --neon-glow-2: 0 0 20px rgba(52, 211, 153, 0.7);
+    --neon-cursor-outer: rgba(16, 185, 129, 0.3);
+  }
+}
+
+/* Beautiful dynamic background breathing mesh animation */
+@keyframes pulse-slow {
+  0%, 100% {
+    transform: scale(1) translate(0px, 0px);
+    opacity: 0.15;
+  }
+  50% {
+    transform: scale(1.15) translate(20px, -30px);
+    opacity: 0.25;
+  }
+}
+
+@keyframes pulse-retro {
+  0%, 100% {
+    transform: scale(1.1) translate(0px, 0px);
+    opacity: 0.12;
+  }
+  50% {
+    transform: scale(0.9) translate(-30px, 20px);
+    opacity: 0.2;
+  }
+}
+
+/* Chroma spectrum background cycle animation */
+@keyframes chroma-cycling {
+  0% {
+    --neon-color-1: #ff0055;
+    --neon-color-2: #00ffcc;
+  }
+  25% {
+    --neon-color-1: #00ffcc;
+    --neon-color-2: #9900ff;
+  }
+  50% {
+    --neon-color-1: #9900ff;
+    --neon-color-2: #ffcc00;
+  }
+  75% {
+    --neon-color-1: #ffcc00;
+    --neon-color-2: #ff0055;
+  }
+  100% {
+    --neon-color-1: #ff0055;
+    --neon-color-2: #00ffcc;
+  }
+}
+
+/* Custom RGB scanline movement */
+@keyframes scanline-roll {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.rgb-grid {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+.mesh-glow-1 {
+  animation: pulse-slow 12s ease-in-out infinite;
+}
+
+.mesh-glow-2 {
+  animation: pulse-retro 15s ease-in-out infinite;
+}
+
+/* Neon Glow utilities to bind with React active state variables */
+.neon-border-dynamic {
+  border-color: var(--neon-color-1);
+  box-shadow: var(--neon-glow-1);
+  transition: all 0.5s ease-in-out;
+}
+
+.neon-border-hover:hover {
+  border-color: var(--neon-color-1);
+  box-shadow: var(--neon-glow-2);
+}
+
+.text-neon-gradient {
+  background: linear-gradient(135deg, var(--neon-color-1), var(--neon-color-2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.5s ease-in-out;
+}
+
+/* Perfect glowing text effects */
+.text-glow-primary {
+  text-shadow: 0 0 10px var(--neon-color-1);
+}
+
+.text-glow-secondary {
+  text-shadow: 0 0 10px var(--neon-color-2);
+}

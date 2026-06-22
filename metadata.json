@@ -1,0 +1,6 @@
+{
+  "name": "Minimalist Creator Hub",
+  "description": "An aesthetic personal hub for a TikTok gaming and business creator, featuring a link-in-bio, gaming corner, business media kit, and an AI-powered Brand Manager chatbot.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
