@@ -71,7 +71,7 @@ export const WorldClock: React.FC<WorldClockProps> = ({ theme }) => {
         <div className="flex items-center gap-1.5">
           <Globe size={11} className="text-zinc-500 group-hover:rotate-45 transition-transform duration-500" />
           <span className="text-[8px] uppercase tracking-widest text-[#a3a3a3] font-mono font-bold">
-            ZELO HQ (GMT-7)
+            SAMMIUM HQ (GMT-7)
           </span>
           <span className="relative flex h-1.5 w-1.5 items-center justify-center">
             <span 

@@ -20,7 +20,7 @@ export const Testimonials: React.FC = () => {
       brand: "Viper Esports Gear",
       logoText: "VIPER",
       campaignType: "Acoustic Keyboard Sound Test & Desk Pad Integration",
-      quote: "Working with Zelo exceeded all our expectations. The keyboard sound test integration was meticulously recorded and hit 1.2M views on TikTok. It drove an unprecedented 14% click-through rate to our checkout storefront.",
+      quote: "Working with Sammium Tech exceeded all our expectations. The keyboard sound test integration was meticulously recorded and hit 1.2M views on TikTok. It drove an unprecedented 14% click-through rate to our checkout storefront.",
       rating: 5,
       metric: "+157% Sale lift",
       metricLabel: "Campaign ROAS"
@@ -30,7 +30,7 @@ export const Testimonials: React.FC = () => {
       brand: "CoreAudio Inc.",
       logoText: "CORE",
       campaignType: "Premium Microphone & Wave XLR Bundle Showcase",
-      quote: "Zelo represents the absolute pinnacle of high-end home setup content. The lighting, editing speed, and absolute clarity of the audio review positioned our studio microphone in front of highly motivated customers.",
+      quote: "Sammium Tech represents the absolute pinnacle of high-end home setup content. The lighting, editing speed, and absolute clarity of the audio review positioned our studio microphone in front of highly motivated customers.",
       rating: 5,
       metric: "840K Views",
       metricLabel: "30-Day Reach"
@@ -40,7 +40,7 @@ export const Testimonials: React.FC = () => {
       brand: "Lumen LED Labs",
       logoText: "LUMEN",
       campaignType: "Setup Transformation Mini-Series",
-      quote: "We've done several influencer placements, but Zelo's community behaves differently. The engagement in the comments section is highly organic with active gamers asking questions about setup specs and links.",
+      quote: "We've done several influencer placements, but Sammium Tech's community behaves differently. The engagement in the comments section is highly organic with active gamers asking questions about setup specs and links.",
       rating: 5,
       metric: "24.5K Clicks",
       metricLabel: "Support Hub Actions"

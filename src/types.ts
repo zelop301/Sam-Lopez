@@ -13,6 +13,8 @@ export interface GamingGear {
   category: 'PC Specification' | 'Peripheral' | 'Audio/Video' | 'Workspace';
   name: string;
   spec: string;
+  usagePercent?: number;
+  maintenanceStatus?: number;
 }
 
 export interface TikTokClip {
@@ -57,3 +59,10 @@ export interface CreatorProfileData {
   gear: GamingGear[];
   clips: TikTokClip[];
 }
+
+export interface FAQItem {
+  question: string;
+  answer: string;
+  category: string;
+}
+

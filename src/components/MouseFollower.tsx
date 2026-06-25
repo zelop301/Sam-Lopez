@@ -73,7 +73,7 @@ export const MouseFollower: React.FC = () => {
 
   return (
     <>
-      {/* Outer Aesthetic Cyberpunk Ring */}
+      {/* Outer Revolutionized Cyberpunk Ring */}
       <motion.div
         className="fixed top-0 left-0 w-8 h-8 rounded-full border pointer-events-none z-50 mix-blend-screen"
         style={{

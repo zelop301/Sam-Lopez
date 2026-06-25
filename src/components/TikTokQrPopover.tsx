@@ -75,7 +75,7 @@ export const TikTokQrPopover: React.FC<TikTokQrPopoverProps> = ({
         }}
         onMouseEnter={() => audioSystem.playHover()}
         className="absolute bottom-4 right-4 p-2 rounded-xl bg-white/5 border border-white/10 hover:bg-white/15 hover:border-purple-500/40 text-zinc-400 hover:text-white transition-all duration-300 pointer-events-auto z-10 flex items-center justify-center cursor-pointer group"
-        title={isMobile ? "Open Zelo TikTok Profile" : "View TikTok Scan QR Code"}
+        title={isMobile ? "Open Sammium Tech Profile" : "View TikTok Scan QR Code"}
       >
         {isMobile ? (
           <Smartphone size={15} className="group-hover:scale-110 transition-transform text-purple-400 animate-pulse" />
@@ -150,7 +150,7 @@ export const TikTokQrPopover: React.FC<TikTokQrPopoverProps> = ({
                   <p className="text-xs text-zinc-400 mt-2">
                     {isMobile 
                       ? "Launch the native TikTok application instantly" 
-                      : "Scan with your smartphone camera to follow Zelo instantly"}
+                      : "Scan with your smartphone camera to follow Sammium Tech instantly"}
                   </p>
                 </div>
 
@@ -167,7 +167,7 @@ export const TikTokQrPopover: React.FC<TikTokQrPopoverProps> = ({
                       className="absolute w-36 h-36 rounded-full border border-dashed border-purple-500/20 flex items-center justify-center -z-10"
                     />
 
-                    {/* Corner aesthetic HUD crosshairs */}
+                    {/* Corner revolutionized HUD crosshairs */}
                     <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2" style={{ borderColor: 'var(--neon-color-1)' }} />
                     <div className="absolute top-2 right-2 w-3 h-3 border-t-2 border-r-2" style={{ borderColor: 'var(--neon-color-1)' }} />
                     <div className="absolute bottom-2 left-2 w-3 h-3 border-b-2 border-l-2" style={{ borderColor: 'var(--neon-color-2)' }} />
@@ -219,7 +219,7 @@ export const TikTokQrPopover: React.FC<TikTokQrPopoverProps> = ({
                       }}
                     />
 
-                    {/* Corner aesthetic HUD crosshairs */}
+                    {/* Corner revolutionized HUD crosshairs */}
                     <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2" style={{ borderColor: 'var(--neon-color-1)' }} />
                     <div className="absolute top-2 right-2 w-3 h-3 border-t-2 border-r-2" style={{ borderColor: 'var(--neon-color-1)' }} />
                     <div className="absolute bottom-2 left-2 w-3 h-3 border-b-2 border-l-2" style={{ borderColor: 'var(--neon-color-2)' }} />
@@ -228,11 +228,11 @@ export const TikTokQrPopover: React.FC<TikTokQrPopoverProps> = ({
                     {/* QR Image fetching */}
                     <img
                       src={qrCodeUrl}
-                      alt={`Zelo TikTok Follow QR`}
+                      alt={`Sammium Tech Follow QR`}
                       className="w-52 h-52 rounded-xl border border-white/5 relative z-0 object-contain selection:bg-transparent"
                       onError={(e) => {
                         // Fallback visual if API is ever blocked/slow
-                        e.currentTarget.src = "https://placehold.co/200x200/0b0b0b/2dd4bf?text=ZELO+TIKTOK+QR";
+                        e.currentTarget.src = "https://placehold.co/200x200/0b0b0b/2dd4bf?text=SAMMIUM+TECH+QR";
                       }}
                     />
                   </div>

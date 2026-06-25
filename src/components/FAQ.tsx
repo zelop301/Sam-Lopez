@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { HelpCircle, ChevronDown } from 'lucide-react';
 import { audioSystem } from '../utils/audioSystem';
+import { FAQS_EN, FAQS_JA } from '../data';
 
 interface FAQItem {
   question: string;
@@ -14,63 +15,7 @@ interface FAQProps {
 }
 
 export const FAQ: React.FC<FAQProps> = ({ lang = 'en' }) => {
-  const faqsEn: FAQItem[] = [
-    {
-      category: 'Partnership',
-      question: 'How do we get in touch for sponsored content or campaign integrations?',
-      answer: 'You can submit an inquiry directly through our "Brand Inquiry / Pitch Engine" form below or email us at zelop301@gmail.com. Our partnership manager will respond with our media deck, rate sheet, and custom package proposals within 24–48 hours.'
-    },
-    {
-      category: 'Deliverables',
-      question: 'What are your typical turnaround times for custom reviews & short-form creation?',
-      answer: 'Standard turnaround time is 7 to 14 business days from the receipt of the sample product, depending on the complexity of the video shot plan (such as detailed acoustic sound-tests, macro-lighting cinematic b-rolls, or multi-angle desk setups). Expedited production tracks are available on request.'
-    },
-    {
-      category: 'Shipping/Hardware',
-      question: 'Do you accept physical sample shipments, and what is your return policy?',
-      answer: 'Yes, we accept physical shipments of keyboards, microphones, peripherals, and high-end desk lifestyle items for hands-on review. Please note that sample shipments are treated as studio evaluation units and are not returned unless pre-paid return shipment labels are provided in advance.'
-    },
-    {
-      category: 'Deliverables',
-      question: 'Can we request raw video deliverables or whitelisting advertising permissions?',
-      answer: 'Absolutely. We offer licensing packages for raw 4K b-roll footage, separate detailed sound recordings, and Spark Ad authorization codes for paid social media magnification (TikTok Custom Identity, Instagram Partnership ads).'
-    },
-    {
-      category: 'Partnership',
-      question: 'Which product categories align best with your community audience?',
-      answer: 'Our community has extremely high engagement in custom mechanical keyboards, high-end audiophile sound components (WAVE XLR, XLR Microphones, Studio Monitore), custom ergonomic office rigs, visual lighting systems (Nanoleaf, Hue, ambient panels), and clean tech workspace layout aesthetics.'
-    }
-  ];
-
-  const faqsJa: FAQItem[] = [
-    {
-      category: '提携パートナー',
-      question: 'スポンサー提携やキャンペーンの相談方法は？',
-      answer: '下記の「ブランドお問合せ ＆ 提案エンジン」フォームから、または直接 zelop301@gmail.com までご連絡ください。案件担当者が24〜48時間以内にメディアデック、価格表、カスタム提案プランとともにご返信いたします。'
-    },
-    {
-      category: '納品形式',
-      question: '商品レビューやショート動画作成の標準的な納期は？',
-      answer: 'サンプル到着後、通常7〜14営業日程度です（打鍵音質テスト、シネマティックなマクロBロール、マルチアングル配置など、高度な演出が含まれるため）。お急ぎの方向けの特急プランもご相談いただけます。'
-    },
-    {
-      category: '配送・実機検証',
-      question: '物理サンプルの発送や、その返却に関してのポリシーは？',
-      answer: 'キーボード、マイク、その他周辺機器、およびデスク環境用ライフスタイル製品のサンプル受け入れを常時受け付けております。なお、サンプル品は実機評価ユニットとしてお預かりするため、事前に着払い返送ラベルのご提供がない限りご返却は致しかねます。'
-    },
-    {
-      category: '納品形式',
-      question: '動画素材の生データ提供、広告のホワイトリスト（Spark Ads）利用は可能ですか？',
-      answer: 'はい、可能です。生データの4K Bロールフッテージ利用権、個別の高音質打鍵音ファイル、および広告用コード（TikTokカスタムID、Instagramタイアップ広告）のライセンスパッケージをご用意しております。'
-    },
-    {
-      category: '提携パートナー',
-      question: '視聴者層と最も親和性が高い製品カテゴリは何ですか？',
-      answer: '当コミュニティでは、カスタムメカニカルキーボード、高音質オーディオ機材（WAVE XLR、コンデンサーマイク）、エルゴノミクスデスクチェアやデスクランプ、Nanoleafなどの部屋全体をおしゃれにする間接照明において抜群のエンゲージメントを誇ります。'
-    }
-  ];
-
-  const faqs = lang === 'ja' ? faqsJa : faqsEn;
+  const faqs = lang === 'ja' ? FAQS_JA : FAQS_EN;
 
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 

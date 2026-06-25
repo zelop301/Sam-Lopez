@@ -72,7 +72,7 @@ export const CreatorKitWidget: React.FC<CreatorKitWidgetProps> = ({ theme, lang 
   const qrColor = getThemeHexColor();
   const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=300x300&color=${qrColor}&bgcolor=0b0b0b&data=${encodeURIComponent(currentUrl)}`;
 
-  const embedCode = `<!-- Zelo Gaming Official Hub Ribbon -->\n<a href="${currentUrl}" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:12px;background:#0d0d0d;border:1px solid #333;color:#fff;font-family:sans-serif;text-decoration:none;font-weight:bold;">\n  <span>Visit Zelo Gaming Hub</span>\n  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>\n</a>`;
+  const embedCode = `<!-- Sammium Tech Industries Official Hub Ribbon -->\n<a href="${currentUrl}" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:12px;background:#0d0d0d;border:1px solid #333;color:#fff;font-family:sans-serif;text-decoration:none;font-weight:bold;">\n  <span>Visit Sammium Tech Industries</span>\n  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>\n</a>`;
 
   return (
     <section className="mb-16 relative">
@@ -99,7 +99,7 @@ export const CreatorKitWidget: React.FC<CreatorKitWidgetProps> = ({ theme, lang 
             </p>
           </div>
 
-          {/* Premium aesthetics credential box */}
+          {/* Premium revolutionized credential box */}
           <div className="p-4 rounded-2xl bg-white/[0.02] border border-white/5 space-y-3 relative overflow-hidden group">
             <div className="absolute top-0 bottom-0 left-0 w-1 transition-all duration-300" style={{ backgroundColor: 'var(--neon-color-1)', boxShadow: 'var(--neon-glow-1)' }} />
             <div className="flex gap-2">
@@ -335,7 +335,7 @@ export const CreatorKitWidget: React.FC<CreatorKitWidgetProps> = ({ theme, lang 
               </AnimatePresence>
             </div>
 
-            {/* Aesthetic bottom footer tracker of the box */}
+            {/* Revolutionized bottom footer tracker of the box */}
             <div className="border-t border-white/5 pt-4 mt-6 flex flex-col md:flex-row items-center justify-between gap-2 text-zinc-600 text-[10px] font-mono uppercase tracking-widest leading-none">
               <div className="flex items-center gap-1.5">
                 <CircleAlert size={10} className="text-zinc-600" />

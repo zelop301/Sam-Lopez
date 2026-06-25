@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Sparkles, Send, MessageSquare, X, Bot, RefreshCw } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import companyLogo from '../assets/images/cyberpunk_minimal_logo_1782104996879.jpg';
 
 interface Message {
   id: string;
@@ -9,13 +10,36 @@ interface Message {
   timestamp: Date;
 }
 
+// Client-side offline smart responder for static deployments
+function getOfflineReply(query: string): string {
+  const q = query.toLowerCase();
+  
+  if (q.includes('rate') || q.includes('price') || q.includes('cost') || q.includes('sponsor') || q.includes('package') || q.includes('charge') || q.includes('money') || q.includes('usd') || q.includes('rates') || q.includes('tier') || q.includes('fee')) {
+    return `### 📊 Official Sponsorship Rates & Packages\n\nI can certainly share our current campaign options and standard rates for **Sammium Tech Industries**:\n\n*   **Dedicated TikTok Video (60s)**: **$1,200 USD**\n    *Includes a premium, dedicated hardware review, product link placed in TikTok Bio for 30 days, and cross-posting to Instagram Reels/YouTube Shorts.*\n*   **Integrated Gaming Clip (15-20s)**: **$550 USD**\n    *High-impact placement/shoutout inside a viral gameplay montage.*\n*   **Desk Setup Transformation Feature**: **$850 USD**\n    *Dedicated peripheral/accessory showcase or custom keyboard build sound-test integration.*\n*   **Monthly Brand Ambassadorship**: **$3,000 USD**\n    *Includes 4 dedicated video assets, a permanent Link-in-Bio slot, logo overlay on Twitch live streams, and dedicated Discord announcement spotlights.*\n\n*💡 To proceed with a custom campaign, please submit your proposal using our **Inquiry Pitch Engine** form on this website or email us at **zelop301@gmail.com**!*`;
+  }
+  
+  if (q.includes('stat') || q.includes('tiktok') || q.includes('follower') || q.includes('subscriber') || q.includes('reach') || q.includes('engage') || q.includes('view') || q.includes('traffic') || q.includes('demographic') || q.includes('audience')) {
+    return `### 📈 Channel Stats & Engagement Metrics\n\nHere are the live audience and engagement figures for **Sammium Tech Industries**:\n\n*   **TikTok (@sammium_tech)**: **245K Followers** | **8.2M Total Likes** | **12% average engagement rate** (High audience motivation & buyer CTR)\n*   **YouTube (Sammium Tech)**: **68K Subscribers** (Focusing on detailed custom PC build guides, cinematic workspace tours, and keyboard assembly vlogs)\n*   **Twitch (sammium_live)**: **42K Followers** (Live competitive FPS streams, hardware modification jams, and real-time setup customizer walkthroughs)\n*   **Instagram (@sammium.tech)**: **35K Followers** (Revolutionized desk setups and short-form desk transition reels)\n\n*All campaign reports feature transparent analytics tracking, custom UTM links, and pixel conversion stats.*`;
+  }
+  
+  if (q.includes('keyboard') || q.includes('setup') || q.includes('spec') || q.includes('hardware') || q.includes('pc') || q.includes('mouse') || q.includes('audio') || q.includes('mic') || q.includes('monitor') || q.includes('build') || q.includes('desk') || q.includes('cpu') || q.includes('gpu')) {
+    return `### 🖥️ Gaming & Build Hardware Specs\n\nHere is the current operational equipment spec utilized by **Sammium Tech Industries**:\n\n*   **Primary Custom Keyboards**:\n    *   **Wobkey Rainy75** (Anodized aluminum, FR4 plate, hand-lubed linear switches, custom GMK keycaps)\n    *   **Wooting 60HE** (Alumaze CNC case, rapid-trigger Lekker analog switches for competitive FPS gaming)\n*   **Creator PC Build**:\n    *   **CPU**: AMD Ryzen 9 7900X (12-Core, 24-Thread)\n    *   **GPU**: ASUS ROG STRIX RTX 4080 Super (16GB VRAM)\n    *   **RAM**: 64GB DDR5 G.Skill Trident Z5 RGB @ 6000MHz\n    *   **Motherboard**: ASUS ROG STRIX X670E-I Gaming WiFi Mini-ITX\n*   **Audio Rig**:\n    *   **Microphone**: Shure SM7B Broadcast Dynamic Mic\n    *   **Audio Interface**: Elgato Wave XLR (USB-C interface with physical mute & dial controls)\n    *   **Headphones**: Beyerdynamic DT 990 Pro (Studio open-back monitors)\n*   **Visual Layout**:\n    *   **Monitor 1**: ASUS ROG PG27AQDM OLED 240Hz (High-tactical gameplay monitor)\n    *   **Monitor 2**: LG UltraFine 27" IPS Side-Screen (Vertical alignment for stream chat and discord)\n\n*Feel free to ask about any specific desk accessories or lighting panels!*`;
+  }
+  
+  if (q.includes('contact') || q.includes('pitch') || q.includes('email') || q.includes('collab') || q.includes('partner') || q.includes('hire') || q.includes('book') || q.includes('form') || q.includes('proposal') || q.includes('deal') || q.includes('work')) {
+    return `### ✉️ How to Book a Collaboration\n\nWe love partnering with innovative hardware and lifestyle brands! To start a campaign with **Sammium Tech Industries**, you have two direct options:\n\n1.  **Email our Campaign Manager**:\n    Send your campaign brief, target timeline, and budget overview directly to: **zelop301@gmail.com**.\n2.  **Submit a proposal on this page**:\n    Go to the **Inquiry Pitch Engine** tab on this webpage, select your deliverables using the **Perk Builder**, set your budget tier, and submit! \n\n*Our brand manager reviews all incoming pitches daily and will reply with a custom media deck, rate sheet, and campaign brief within 24 to 48 hours.*`;
+  }
+  
+  return `### 👋 Hello! I'm Aura, your AI brand manager.\n\nI am currently running in **resilient offline mode** because this site is hosted on a purely static platform (like GitHub Pages). \n\nI can still answer any questions you have about **Sammium Tech Industries**! Just type one of the following terms:\n\n*   **Rates** — to view sponsorship tiers and pricing\n*   **Stats** — to see our TikTok, YouTube, and engagement analytics\n*   **Setup** — to explore our PC specs and custom keyboard details\n*   **Contact** — to learn how to book or email us a proposal\n\n*(Or click any of the suggestion buttons below!)*`;
+}
+
 export const BrandAssistant: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 'welcome',
       sender: 'aura',
-      content: "Hello! I am Aura, Zelo's AI Brand & Business Associate. Whether you are representing a brand wanting to partner on a campaign, or a fellow creator curious about setup details, I am here to help. What can I assist you with today?",
+      content: "Hello! I am Aura, the AI Brand & Business Associate for Sammium Tech Industries. Whether you are representing a brand wanting to partner on a campaign, or a fellow creator curious about setup details, I am here to help. What can I assist you with today?",
       timestamp: new Date()
     }
   ]);
@@ -88,14 +112,15 @@ export const BrandAssistant: React.FC = () => {
 
       setMessages(prev => [...prev, auraMessage]);
     } catch (error) {
-      console.error("Chat error:", error);
-      const errorMessage: Message = {
-        id: `msg-err-${Date.now()}`,
+      console.error("Chat error, entering offline responder mode:", error);
+      const offlineReply = getOfflineReply(textToSend);
+      const auraMessage: Message = {
+        id: `msg-${Date.now() + 1}`,
         sender: 'aura',
-        content: "Sorry! Connection was interrupted. It looks like the Gemini API key isn't configured in the AI Studio backend secrets or my server is offline. If you are demoing, please be sure `GEMINI_API_KEY` is added to your project variables, or contact Zelo directly via zelop301@gmail.com!",
+        content: offlineReply,
         timestamp: new Date()
       };
-      setMessages(prev => [...prev, errorMessage]);
+      setMessages(prev => [...prev, auraMessage]);
     } finally {
       setIsTyping(false);
     }
@@ -106,7 +131,7 @@ export const BrandAssistant: React.FC = () => {
       {
         id: 'welcome',
         sender: 'aura',
-        content: "Drafting a new meeting... I am Aura, Zelo's digital manager. How can I help you customize your next marketing strategy or desk styling campaign today?",
+        content: "Drafting a new meeting... I am Aura, the digital manager for Sammium Tech Industries. How can I help you customize your next marketing strategy, hardware integration, or campaign today?",
         timestamp: new Date()
       }
     ]);
@@ -147,14 +172,19 @@ export const BrandAssistant: React.FC = () => {
             {/* Header */}
             <div className="p-4 bg-gradient-to-r from-slate-900 via-slate-950 to-slate-900 border-b border-slate-800/80 flex items-center justify-between">
               <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-teal-500 to-emerald-500 flex items-center justify-center shadow-lg shadow-teal-500/10">
-                  <Bot size={22} className="text-slate-950" />
+                <div className="w-10 h-10 rounded-xl bg-zinc-950 border border-slate-800 flex items-center justify-center p-0.5 overflow-hidden shadow-lg shadow-black/40">
+                  <img 
+                    src={companyLogo} 
+                    alt="Sammium Logo" 
+                    className="w-full h-full object-contain rounded-lg" 
+                    referrerPolicy="no-referrer"
+                  />
                 </div>
                 <div>
                   <h3 className="font-sans font-medium text-slate-100 text-sm tracking-tight flex items-center gap-1.5">
                     Aura <span className="text-[10px] bg-teal-500/10 text-teal-400 px-1.5 py-0.5 rounded font-mono font-normal uppercase tracking-widest">AI Manager</span>
                   </h3>
-                  <p className="text-[11px] text-slate-400 font-mono">Representing @zelo_gaming</p>
+                  <p className="text-[11px] text-slate-400 font-mono">Representing Sammium Tech</p>
                 </div>
               </div>
               <div className="flex items-center space-x-1">

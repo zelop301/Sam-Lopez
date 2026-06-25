@@ -64,7 +64,7 @@ export const SponsorPerkBuilder: React.FC<SponsorPerkBuilderProps> = ({
     {
       id: 'discord',
       title: { en: 'Discord Community Pin', ja: 'Discord 告知チャンネル固定' },
-      desc: { en: 'Pinned campaign post in Zelo\'s general gaming community channel to maximize CTR.', ja: 'ゲーマー＆自作キーボード愛好家が集積するDiscord内チャンネルでの専属紹介ピン固定' },
+      desc: { en: 'Pinned campaign post in Sammium Tech\'s general gaming community channel to maximize CTR.', ja: 'ゲーマー＆自作キーボード愛好家が集積するDiscord内チャンネルでの専属紹介ピン固定' },
       price: 150,
       icon: <MessageSquare className="w-4 h-4 text-amber-400" />
     }
